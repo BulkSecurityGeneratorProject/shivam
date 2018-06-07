@@ -21,11 +21,10 @@ node {
                 archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
             }
 
-            def dockerImage
             stage('build docker') {
                 sh "cp -R src/main/docker target/"
                 sh "cp target/*.war target/docker/"
-                dockerImage = docker.build('shivam', 'target/docker')
+	        sh "docker build -t shivam target/docker"
             }
   
 
