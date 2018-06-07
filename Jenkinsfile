@@ -6,7 +6,7 @@ node {
             checkout scm
         }
 
-        dir('women-cell'){
+     
             stage('check java') {
                 sh "java -version"
             }
@@ -28,6 +28,6 @@ node {
             }
   
 
-    }
+    
    
 }
